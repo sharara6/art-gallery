@@ -1,69 +1,148 @@
 .address-container {
-  padding: 15px;
+  padding: 25px;
   border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.checkout-container .address-card {
-  border: 1px solid rgb(232, 232, 232);
-  margin-bottom: 10px;
-  padding: 10px;
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.no-address-message {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.address-card {
+  border: 1px solid #e8e8e8;
+  padding: 15px;
   border-radius: 10px;
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
 }
+
+.address-card:hover {
+  border-color: #ccc;
+  background-color: #f5f5f5;
+}
+
+.address-card.selected {
+  border: 2px solid var(--primary-color);
+  background-color: rgba(var(--primary-color-rgb, 0, 0, 0), 0.03);
+}
+
+.radio-container {
+  margin-right: 15px;
+  padding-top: 3px;
+}
+
+.address-card input {
+  margin: 0;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.address-details {
+  flex: 1;
+  cursor: pointer;
+}
+
 .address-container .address-card .name {
-  margin-bottom: 5px;
-  font-size: larger;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
 }
 
 .address-container .address-card .address {
-  color: white;
-  font-size: 15px;
-  margin-right: 5px;
-  color: grey;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.address-container .address-card .phone {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.address-container .address-card .phone span {
+  font-weight: 600;
 }
 
 .add-new-address-btn-container {
   text-align: center;
-}
-
-.add-new-address-btn:hover {
-  cursor: pointer;
-  background: black;
+  margin-top: 20px;
 }
 
 .add-new-address-btn {
   border: none;
-  padding: 8px 20px;
-  border-radius: 7px;
-  margin-top: 10px;
+  padding: 12px 25px;
+  border-radius: 8px;
   color: white;
   background: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-new-address-btn .icon {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.add-new-address-btn:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .address-btns {
-  margin-top: 10px;
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
 }
 
 .address-btns button {
-  margin-right: 10px;
-  padding: 5px 18px;
+  padding: 8px 18px;
   border: none;
   border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .address-btns button:hover {
-  cursor: pointer;
   background-color: var(--secondary-background-color-onhover);
-}
-
-.address-card input {
-  margin-right: 10px;
 }
 
 @media (min-width: 768px) {
   .address-container {
-    width: 50vw;
+    width: 50%;
   }
 }

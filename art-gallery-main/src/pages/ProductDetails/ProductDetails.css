@@ -15,3 +15,14 @@
     justify-content: space-evenly;
   }
 }
+
+@media (max-width: 767px) {
+  .products-page-container {
+    margin-top: 10px;
+    padding: 0 20px;
+    width: 100%;
+  }
+  .products-page-container img{
+    padding: 5px;
+  }
+}

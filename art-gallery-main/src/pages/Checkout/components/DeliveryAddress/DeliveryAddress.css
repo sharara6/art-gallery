@@ -1,40 +1,56 @@
 .delivery-address-container {
-  border-top: 1px solid rgb(231, 231, 231);
-  padding: 15px;
-  margin: 15px;
+  padding: 20px 25px;
 }
 
-.delivery-address-description {
-  display: flex;
-  flex-direction: column;
-  color: grey;
-}
-.delivery-address-description .name {
-  margin-bottom: 15px;
+.delivery-title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
 }
 
-.delivery-address-description .address {
+.delivery-address-details {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.address-info {
+  margin-bottom: 20px;
+}
+
+.recipient-name, .full-address, .contact-info {
   margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
 }
 
-.delivery-address-container p {
-  color: grey;
-  margin-bottom: 15px;
-  font-weight: bolder;
+.label {
+  font-weight: 600;
+  color: #333;
+  margin-right: 5px;
 }
 
 .place-order-btn {
-  border: none;
-  color: white;
+  width: 100%;
+  padding: 14px 0;
   background-color: var(--primary-color);
-  padding: 12px 36px;
-  border-radius: 10px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
   font-weight: 600;
-  font-size: 1.1rem;
-  margin-top: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .place-order-btn:hover {
-  cursor: pointer;
-  background-color: black;
+  background-color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

@@ -72,8 +72,8 @@ export const AddressModal = () => {
 
   return (
     <div className="address-modal-container">
-      <div className="address-input-container">
-        <h1>Address Form</h1>
+      <div className="address-modal-content">
+        <h2 className="modal-title">{isEdit ? "Edit Address" : "Add New Address"}</h2>
         <form
           onSubmit={(e) => {
             if (!isEdit) {
@@ -105,83 +105,122 @@ export const AddressModal = () => {
               setIsEdit(false);
             }
           }}
-          className="input-container"
+          className="address-form"
         >
-          <input
-            name="name"
-            value={addressForm.name}
-            required
-            onChange={(e) =>
-              setAddressForm({ ...addressForm, name: e.target.value })
-            }
-            placeholder="Enter Name"
-          />
-          <input
-            required
-            value={addressForm.street}
-            onChange={(e) =>
-              setAddressForm({ ...addressForm, street: e.target.value })
-            }
-            placeholder="Enter Street"
-          />
-          <input
-            name="city"
-            required
-            value={addressForm.city}
-            onChange={(e) =>
-              setAddressForm({ ...addressForm, city: e.target.value })
-            }
-            placeholder="Enter City"
-          />
-          <input
-            name="state"
-            required
-            value={addressForm.state}
-            onChange={(e) =>
-              setAddressForm({ ...addressForm, state: e.target.value })
-            }
-            placeholder="Enter State"
-          />
-          <input
-            name="country"
-            value={addressForm.country}
-            required
-            onChange={(e) =>
-              setAddressForm({ ...addressForm, country: e.target.value })
-            }
-            placeholder="Enter Country"
-          />
-          <input
-            name="pincode"
-            value={addressForm.pincode}
-            required
-            onChange={(e) =>
-              setAddressForm({ ...addressForm, pincode: e.target.value })
-            }
-            placeholder="Enter Pincode"
-          />
-          <input
-            name="phone"
-            value={addressForm.phone}
-            required
-            onChange={(e) =>
-              setAddressForm({ ...addressForm, phone: e.target.value })
-            }
-            placeholder="Enter Phone"
-            minLength="8"
-          />
-          <input className="submit" type="submit" value="Save" />
+          <div className="form-group">
+            <label htmlFor="name">Full Name</label>
+            <input
+              id="name"
+              name="name"
+              value={addressForm.name}
+              required
+              onChange={(e) =>
+                setAddressForm({ ...addressForm, name: e.target.value })
+              }
+              placeholder="Enter your full name"
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="street">Street Address</label>
+            <input
+              id="street"
+              required
+              value={addressForm.street}
+              onChange={(e) =>
+                setAddressForm({ ...addressForm, street: e.target.value })
+              }
+              placeholder="Enter street address"
+            />
+          </div>
+          
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="city">City</label>
+              <input
+                id="city"
+                name="city"
+                required
+                value={addressForm.city}
+                onChange={(e) =>
+                  setAddressForm({ ...addressForm, city: e.target.value })
+                }
+                placeholder="Enter city"
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="state">State</label>
+              <input
+                id="state"
+                name="state"
+                required
+                value={addressForm.state}
+                onChange={(e) =>
+                  setAddressForm({ ...addressForm, state: e.target.value })
+                }
+                placeholder="Enter state"
+              />
+            </div>
+          </div>
+          
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="country">Country</label>
+              <input
+                id="country"
+                name="country"
+                value={addressForm.country}
+                required
+                onChange={(e) =>
+                  setAddressForm({ ...addressForm, country: e.target.value })
+                }
+                placeholder="Enter country"
+              />
+            </div>
+            
+            <div className="form-group">
+              <label htmlFor="pincode">Postal Code</label>
+              <input
+                id="pincode"
+                name="pincode"
+                value={addressForm.pincode}
+                required
+                onChange={(e) =>
+                  setAddressForm({ ...addressForm, pincode: e.target.value })
+                }
+                placeholder="Enter postal code"
+              />
+            </div>
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              id="phone"
+              name="phone"
+              value={addressForm.phone}
+              required
+              onChange={(e) =>
+                setAddressForm({ ...addressForm, phone: e.target.value })
+              }
+              placeholder="Enter phone number"
+              minLength="8"
+            />
+          </div>
+          
+          <div className="form-actions">
+            <button type="button" className="cancel-btn" onClick={() => setIsAddressModalOpen(false)}>
+              Cancel
+            </button>
+            <button type="button" className="dummy-btn" onClick={() => setAddressForm({ ...dummyAddress })}>
+              Fill with Sample Data
+            </button>
+            <button type="submit" className="save-btn">
+              {isEdit ? "Update Address" : "Save Address"}
+            </button>
+          </div>
         </form>
-        <div className="btn-container">
-          <button onClick={() => setIsAddressModalOpen(false)}>Cancel</button>
-          <button
-            onClick={() => {
-              setAddressForm({ ...dummyAddress });
-            }}
-          >
-            Add Dummy Data
-          </button>
-        </div>
       </div>
     </div>
   );

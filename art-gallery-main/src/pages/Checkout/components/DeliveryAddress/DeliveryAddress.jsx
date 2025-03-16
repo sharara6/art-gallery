@@ -72,18 +72,20 @@ export const DeliveryAddress = () => {
 
   return (
     <div className="delivery-address-container">
-      <p>Delivering To</p>
+      <h3 className="delivery-title">Delivering To</h3>
 
-      <div className="delivery-address-description">
-        <span className="name">
-          Name: {userDataState.orderDetails?.orderAddress?.name}
-        </span>
-        <span className="address">
-          Address: {orderAddress?.street}, {orderAddress?.city},{" "}
-          {orderAddress?.state}, {orderAddress?.country},{" "}
-          {orderAddress?.pincode}
-        </span>
-        <span className="contact">Contact: {orderAddress?.phone}</span>
+      <div className="delivery-address-details">
+        <div className="address-info">
+          <p className="recipient-name">
+            <span className="label">Name:</span> {orderAddress?.name}
+          </p>
+          <p className="full-address">
+            <span className="label">Address:</span> {orderAddress?.street}, {orderAddress?.city}, {orderAddress?.state}, {orderAddress?.country}, {orderAddress?.pincode}
+          </p>
+          <p className="contact-info">
+            <span className="label">Contact:</span> {orderAddress?.phone}
+          </p>
+        </div>
         <button onClick={placeOrderHandler} className="place-order-btn">
           Place Order
         </button>

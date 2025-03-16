@@ -12,8 +12,8 @@ export const Checkout = () => {
   return (
     !loading &&
     (userDataState.cartProducts.length ? (
-      <div>
-        <h1 className="page-heading">Checkout!</h1>
+      <div className="checkout-page">
+        <h1 className="page-heading">Complete Your Purchase</h1>
         <div className="checkout-container">
           <AddressSection />
           <OrderSummary />
@@ -21,12 +21,13 @@ export const Checkout = () => {
       </div>
     ) : (
       <div className="no-items-container">
-        <h2 className="page-heading">No items in your cart to Checkout!</h2>
+        <h2 className="page-heading">Your cart is empty</h2>
+        <p className="empty-cart-message">Add some art pieces to your cart to begin checkout.</p>
         <button
           className="explore-btn"
           onClick={() => navigate("/product-listing")}
         >
-          Explore
+          Browse Art Gallery
         </button>
       </div>
     ))
